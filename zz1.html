@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" class="number1"><br>
+    <input type="number" class="number2"><br>
+    
+    <button class="addOperator">+</button>
+    <button class="subOperator">-</button>
+    <button class="mulOperator">*</button>
+    <button class="divOperator">/</button><br>
+
+    <div class="showResult"></div>
+
+    <script>
+        let number1 = document.querySelector('.number1');
+        let number2 = document.querySelector('.number2');
+
+        let showResult = document.querySelector('.showResult');
+
+        const addOperator = document.querySelector('.addOperator');
+        const subOperator = document.querySelector('.subOperator');
+        const mulOperator = document.querySelector('.mulOperator');
+        const divOperator = document.querySelector('.divOperator');
+
+        addOperator.addEventListener('click', () => sum(number1, number2, showResult));
+        subOperator.addEventListener('click', () => sub(number1, number2, showResult));
+        mulOperator.addEventListener('click', () => mul(number1, number2, showResult));
+        divOperator.addEventListener('click', () => div(number1, number2, showResult));
+
+        function sum(num1, num2, res) {
+            console.log(num1);
+            console.log(num2);
+            const result = parseFloat(num1.value) + parseFloat(num2.value);
+            res.textContent = result;
+        }
+
+        function sub(num1, num2, res) {
+            const result = parseFloat(num1.value) - parseFloat(num2.value);
+            res.textContent= result;
+        }
+
+        function mul(num1, num2, res) {
+            const result = parseFloat(num1.value) * parseFloat(num2.value);
+            res.textContent = result;
+        }
+
+        function div(num1, num2, res) {
+            const result = parseFloat(num1.value) / parseFloat(num2.value);
+            res.textContent = result;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function veryfication (login, password) {
+            if (login === 'admin' && password === 'admin') {
+                console.log('Podane dane są poprawne.')
+            }
+
+            if (login === 'admin1' && password === 'admin1') {
+                console.log('Podane dane są poprawne.')
+            }
+
+            else {
+                console.log('Podane dane są niepoprawne.')
+            }
+        }
+
+        veryfication('admin', 'admin');
+        veryfication('admin1', 'admin1');
+        veryfication('admit', 'qwe');
+    </script>
+</body>
+</html>

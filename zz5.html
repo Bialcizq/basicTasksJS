@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Kto jest starszy?</h1><br>
+    <h3>Wiek pierwszej osoby: </h3><br>
+    <input type="number" class="age1"><br>
+    <h3>Wiek drugiej osoby: </h3><br>
+    <input type="number" class="age2"><br><br>
+    <button class="calculate">Sprawdź!</button><br><br>
+    <div class="result"></div>
+    <div class="specialAllert"></div>
+
+    <script>
+        let firstAgeValue = document.querySelector('.age1');
+        let secondAgeValue = document.querySelector('.age2');
+        let resultValue = document.querySelector('.result');
+        let spAllert = document.querySelector('.specialAllert');
+
+        const calculateBtn = document.querySelector('.calculate');
+        calculateBtn.addEventListener('click', () => sum(firstAgeValue, secondAgeValue));
+
+        function sum(a, b) {
+            const sumValue = parseFloat(a.value) + parseFloat(b.value)
+            
+            if (parseFloat(a.value) > parseFloat(b.value)) {
+                resultValue.textContent = 'Pierwsza osoba jest starsza.'
+            }
+
+            if (parseFloat(a.value) < parseFloat(b.value)) {
+                resultValue.textContent = 'Druga osoba jest starsza.'
+            }
+
+            if (parseFloat(a.value) === parseFloat(b.value)) {
+                resultValue.textContent = 'Obie osoby są w tym samym wieku.'
+            }
+
+            if (sumValue > 100) {
+                spAllert.textContent= 'Jesteście starzy!'
+            }
+
+        }
+    </script>
+</body>
+</html>

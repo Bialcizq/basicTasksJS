@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Czy rok jest przestępny?</h1><br>
+    <h3>Podaj rok w celu sprawdzenia: </h3>
+    <input type="number" class="year"><br><br>
+    <button class="check">Sprawdź!</button><br><br>
+    <div class="result"></div>
+
+    <script>
+        const yearValue = document.querySelector('.year');
+        const checkBtn = document.querySelector('.check');
+        const resultValue = document.querySelector('.result');
+
+        checkBtn.addEventListener('click', () => calc(yearValue));
+
+        function calc(y) {
+            const det = parseFloat(y.value) % 4;
+
+            if (det > 0) {
+                resultValue.textContent = 'To nie jest rok przestępny!';
+            }
+
+            else {
+                resultValue.textContent = 'To jest rok przestępny!';
+            }
+        }
+    </script>
+</body>
+</html>

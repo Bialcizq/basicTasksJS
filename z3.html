@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const calculation = function (a, b, c) {
+            
+            const delta = b*b - 4*a*c;
+            console.log(delta);
+            const p = Math.sqrt(delta);
+
+            if (delta == 0) {
+            const result = -b / (2*a);
+            return result;
+            }
+
+            if (delta > 0) {
+            const x1 = (-b - p) / (2*a);
+            const x2 = (-b + p) / (2*a);
+
+            return [x1, x2];
+            }
+
+            else return 'no result'
+            
+        }
+
+        console.log(calculation(35, 23, -39))
+    </script>
+</body>
+</html>

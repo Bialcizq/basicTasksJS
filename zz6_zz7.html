@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Podaj pierwszyą liczbę: </h3><br>
+    <input type="number" class="number1"><br>
+    <h3>Podaj drugą liczbę: </h3><br>
+    <input type="number" class="number2"><br>
+    <h3>Wybierz działanie: </h3><br>
+    <input type="text" class="operator"><br><br>
+    <button class="calculate">Oblicz</button><br>
+    <h3>Wynik: </h3>
+    <div class="result"></div>
+
+    <script>
+        const numOneValue = document.querySelector('.number1');
+        const numTwoValue = document.querySelector('.number2');
+        const resultValue = document.querySelector('.result');
+        const operation = document.querySelector('.operator');
+
+        const calculateBtn = document.querySelector('.calculate');
+        calculateBtn.addEventListener('click', () => calc(numOneValue, numTwoValue, operation));
+
+        function calc(a, b, oper) {
+            switch (oper.value) {
+                case '+':
+                    const sum = parseFloat(a.value) + parseFloat(b.value);
+                    console.log(sum);
+                    resultValue.textContent = sum;
+                    break;
+                
+                case '-':
+                    const sub = parseFloat(a.value) - parseFloat(b.value);
+                    resultValue.textContent = sub;
+                    break;
+
+                case '*':
+                    const mul = parseFloat(a.value) * parseFloat(b.value);
+                    resultValue.textContent = mul;
+                    break;
+
+                case '/':
+                    const div = parseFloat(a.value) / parseFloat(b.value);
+                    resultValue.textContent = div;
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

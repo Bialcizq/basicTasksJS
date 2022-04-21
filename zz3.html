@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Obliczanie miejsc zerowych</h1><br><br>
+    <h3>Podaj a: </h3>
+    
+    <input type="number" class="ax2"><br>
+
+    <h3>Podaj b: </h3>
+
+    <input type="number" class="bx"><br>
+
+    <h3>Podaj c: </h3>
+
+    <input type="number" class="c"><br><br>
+
+    <button class="calculate">Oblicz</button><br>
+
+    <div class="delta"></div>
+    <div class="x1"></div>
+    <div class="x2"></div>
+
+    <script>
+        let aValue = document.querySelector('.ax2');
+        let bvalue = document.querySelector('.bx');
+        let cValue = document.querySelector('.c');
+
+        let deltaValue = document.querySelector('.delta');
+        let xFirstValue = document.querySelector('.x1');
+        let xSecondValue = document.querySelector('.x2');
+
+        const calculateBtn = document.querySelector('.calculate');
+
+        calculateBtn.addEventListener('click', () => calc(aValue, bvalue, cValue, deltaValue));
+
+        function calc(a, b, c, d) {
+            const dlt = parseFloat(b.value) * parseFloat(b.value) - 4 * parseFloat(a.value) * parseFloat(c.value);
+            deltaValue.textContent = 'Delta =  ' + dlt; 
+
+            if (dlt === 0) {
+                const zeroPosition = parseFloat( - b.value) / (2 * parseFloat(a.value));
+                xFirstValue.textContent = zeroPosition;
+            }
+
+            if (dlt > 0) {
+                const dltsqr = Math.sqrt(dlt);
+                const x1 = (parseFloat( - b.value) - dltsqr) / (2 * parseFloat(a.value));
+                const x2 = (parseFloat( - b.value) + dltsqr) / (2 * parseFloat(a.value));
+                xFirstValue.textContent = 'x1 =  ' + x1;
+                xSecondValue.textContent = 'x2 =  ' + x2;
+            }
+        }
+    </script>
+</body>
+</html>

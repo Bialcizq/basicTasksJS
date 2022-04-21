@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Obliczanie masy relatywistyczna</h1><br>
+    <h3>Podaj masę spoczynkową: </h3><br>
+    <input type="number" class="weight"><br><br>
+    <h3>Podaj prędkość: </h3>
+    <input type="number" class="velocity"><br><br>
+    <button class="calculate">Oblicz</button><br><br>
+    <div class="result"></div>
+
+    <script>
+        let massValue = document.querySelector('.weight');
+        let velocityValue = document.querySelector('.velocity');
+        let resultValue = document.querySelector('.result');
+        const cConst = 299792458;
+
+        const calculateBtn = document.querySelector('.calculate');
+        calculateBtn.addEventListener('click', () => calc(massValue, velocityValue, cConst));
+
+        function calc(m, v, c) {
+            const mr = parseFloat(m.value) / Math.sqrt(1 - ((parseFloat(v.value) * parseFloat(v.value)) / (c * c)));
+            resultValue.textContent = 'Masa relatywistyczna obiektu o tej masie wynosi ' + mr;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const binary = [];
+
+        function calc(number) {
+
+
+            while (number !== 1) {
+                binary.push(number%2);
+                number = Math.floor(number / 2) - number%2;
+            }
+
+            console.log(binary);
+
+        }
+        /*
+    function calc(number) {
+
+        for (i = number; i = 0; i = (i/2) - (i%2)) {
+            console.log(number%2);
+        }
+
+        return number;
+    }
+
+*/
+    </script>
+</body>
+</html>

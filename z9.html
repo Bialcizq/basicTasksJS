@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calc(r, h) {
+            const area = (2*Math.PI*(r*r)) + (2*Math.PI*r*h);
+            const volume = Math.PI*(r*r)*h;
+
+            if (r <= 0 ) {
+                console.log("Nie może być 0")
+            }
+
+            if (h <= 0) {
+                console.log('Nie może być 0')
+            }
+
+            console.log('Pole walca wynosi ' + area);
+            console.log('Objętość walca wynosi ' + volume);
+        }
+
+        calc(5, 7);
+        calc(0, 7)
+    </script>
+</body>
+</html>

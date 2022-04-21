@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Obliczanie pola i objętości walca: </h1><br>
+    <h3>Promień: </h3>
+    <input type="number" class="radius"><br>
+    <h3>Wysokość: </h3>
+    <input type="number" class="height"><br><br>
+    <button class="calculate">Oblicz</button><br><br>
+    <div class="area"></div><br>
+    <div class="volume"></div><br>
+
+    <script>
+        const rValue = document.querySelector('.radius');
+        const hValue = document.querySelector('.height');
+        const aResult = document.querySelector('.area');
+        const vResult = document.querySelector('.volume');
+        const calculateBtn = document.querySelector('.calculate');
+        calculateBtn.addEventListener('click', () => calc(rValue, hValue));
+
+        function calc(r, h) {
+
+            if (r <= 0 ) {
+                aResult.textContent = "Nie może być 0"
+            }
+
+            if (h <= 0) {
+                aResult.textContent = 'Nie może być 0'
+            }
+
+            else {
+                const a = (2*Math.PI*(parseFloat(r.value)*parseFloat(r.value))) + (2*Math.PI*parseFloat(r.value)*parseFloat(h.value));
+                const v = Math.PI*(parseFloat(r.value)*parseFloat(r.value))*parseFloat(h.value);
+
+                aResult.textContent = a;
+                vResult.textContent = v;
+            }
+        }
+
+    </script>
+</body>
+</html>

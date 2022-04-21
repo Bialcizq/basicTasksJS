@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calc(num1, num2, num3) {
+            
+            const arr = [...arguments];
+            
+            arr.sort((a, b)=> b - a)
+            console.log(arr)
+
+            const v1 = arr[0];
+            const v2 = arr[1];
+            const v3 = arr[2];
+
+            if ((v1 * v1) === (v2*v2) + (v3*v3)) {
+                console.log('Liczby stanowią trójkę pitagorejską.')
+            }
+            else {
+                console.log('To nie jest trojka pitagorejska.')
+            }
+            
+            /*
+            let max = num1;
+
+            console.log(arguments);
+
+            for (let i = 1; i < arguments.length; i++) {
+                if (max < arguments[i]) {
+                    max = arguments[i];
+                }
+                
+            }
+            console.log(max)
+            */
+            
+        }
+
+        calc(3, 4, 5);
+        calc(4, 5, 3);
+        calc(5, 5, 5);
+        calc(34, 456, 90)
+    </script>
+</body>
+</html>

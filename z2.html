@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+
+        const calculation = function (weight, height) {
+
+            const bmi = weight/(height * height);
+
+          return bmi;
+        }
+
+        const qwe = calculation(51, 1.84);
+
+        if (qwe < 18.5) {
+            console.log('Jesteś za chudy');
+        }
+        
+        else if (qwe > 25) {
+            console.log('Jesteś za gruby');
+        }
+
+        else {
+            console.log('Twoje bmi jest git');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Podaj swoją wagę: </h1>
+    <input type="number" class="weight" placeholder="Waga w kg."><br>
+    <h1>Podaj swój wzrost: </h1>
+    <input type="number" class="height" placeholder="Wzrost w m."><br><br>
+
+    <button class="calculate">Oblicz</button><br><br>
+
+    <div class="bmi"></div>
+    <div class="information"></div>
+
+    <script>
+        let weightValue = document.querySelector('.weight');
+        let heightValue = document.querySelector('.height');
+
+        let bmiValue = document.querySelector('.bmi');
+        let informationStatus = document.querySelector('.information');
+
+        const calculateBtn = document.querySelector('.calculate');
+
+        calculateBtn.addEventListener('click', () => calc(weightValue, heightValue, bmiValue));
+
+        function calc(num1, num2, res) {
+            const result = parseFloat(num1.value) / (parseFloat(num2.value) * parseFloat(num2.value));
+            res.textContent = result;
+
+            if (result < 18.5) {
+                informationStatus.textContent = 'Jesteś za chudy!';
+            }
+
+            if (result > 25) {
+                informationStatus.textContent = 'Jesteś za gruby!';
+            }
+
+            else {
+                informationStatus.textContent = 'BMI w normie.'
+            }
+        }
+    </script>
+</body>
+</html>

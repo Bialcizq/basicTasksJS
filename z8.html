@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calc(year) {
+            const det = year % 4;
+
+            if (det > 0) {
+                console.log(year + ' nie jest rokiem przestępnym.');
+            }
+
+            else {
+                console.log(year + ' jest rokiem przestępnym.');
+            }
+        }
+
+        calc(2021);
+        calc(2020);
+    </script>
+</body>
+</html>
